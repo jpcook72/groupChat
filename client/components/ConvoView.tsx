@@ -7,11 +7,11 @@ import { Message, Conversation } from '../constants/interfaces';
 export default function ConvoView() {
 
 	const [messages, setMessages] = useState<Conversation | null>(fakeMessages)
-
+	console.log(messages)
 	return(
 		<div>
 			{
-				!messages ? (
+				messages == null ? (
 					<Card >
 						Loading...
 					</Card>
@@ -19,12 +19,15 @@ export default function ConvoView() {
 				messages.map((message, index) => (
 					<Card key={index}>
 						<Card.Body>
-							<Card.Title>{message.sender}</Card.Title>
+							<div>
+								<img src={message.sender.profilePictureURL} className="profilePicture" />
+								<Card.Title>{message.sender.name}</Card.Title>
+							</div>
 							<Card.Text>
 								{message.text}
 							</Card.Text>
 							<Card.Text>
-								{message.date.toString()}
+								{message.date.toLocaleString()}
 							</Card.Text>
 						</Card.Body>
 					</Card>

@@ -1,6 +1,4 @@
-
-import express from 'express';
-
+const express = require('express');
 const app = express()
 const path = require('path')
 
@@ -14,14 +12,14 @@ interface ResponseError extends Error {
 }
 
 // 404 handler
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((req: any, res: any, next: any) => {
     const error: ResponseError = Error(`Page not found(${req.url})`)
     error.status = 404
     next(error)
 })
 
 // 500 handler
-app.use((err: ResponseError, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: ResponseError, req: any, res: any, next: any) => {
     res.status(err.status || 500).send(`
     <html>
       <body>

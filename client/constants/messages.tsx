@@ -1,11 +1,11 @@
 const John = {
 	name: 'John',
-	image: null
+	profilePictureURL: 'test-img.jpg'
 }
 
 const Ryan = {
 	name: 'Ryan',
-	image: null
+	profilePictureURL: 'test-img.jpg'
 }
 
 export const fakeMessages = [

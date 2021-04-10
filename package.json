@@ -2,12 +2,12 @@
   "name": "groupChat",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
+  "main": "server/index.ts",
   "scripts": {
     "test": "jest",
     "build": "webpack",
     "build:dev": "webpack -w",
-    "start": "node server/index.js",
+    "start": "node server/index.ts",
     "start:dev": "npm run build && nodemon --ignore client --ignore server/public"
   },
   "keywords": [],
@@ -27,7 +27,8 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "sass": "^1.32.8",
-    "ts-loader": "^8.1.0"
+    "ts-loader": "^8.1.0",
+    "ts-node": "^9.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

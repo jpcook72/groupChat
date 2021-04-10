@@ -1,11 +1,11 @@
 module.exports = {
-	entry: ["./client/index.js"],
+	entry: ["./client/index.tsx"],
 	output: {
 		path: __dirname,
 		filename: "./server/public/bundle.js",
 	},
 	resolve: {
-		extensions: [".js", ".jsx", ".tsx"],
+		extensions: [".js", ".jsx", ".tsx", ".ts"],
 	},
 	devtool: "source-map",
 	watchOptions: {
@@ -46,7 +46,11 @@ module.exports = {
 						},
 					},
 				],
-			}
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+			},
 		],
 	},
 }
