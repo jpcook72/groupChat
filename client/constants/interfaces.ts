@@ -1,6 +1,6 @@
 export interface Person {
 	name: string;
-    profilePictureURL?: string | undefined;
+    profilePictureURL: string | undefined;
 }
 
 export interface Message {

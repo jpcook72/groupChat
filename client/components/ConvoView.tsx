@@ -1,13 +1,13 @@
-import React, {useState, useCallback, useEffect} from "react"
+import React, {useState} from "react"
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import { fakeMessages } from '../constants/messages';
 import { Message, Conversation } from '../constants/interfaces';
+import MessageView from './MessageView';
 
 export default function ConvoView() {
 
 	const [messages, setMessages] = useState<Conversation | null>(fakeMessages)
-	console.log(messages)
+
 	return(
 		<div>
 			{
@@ -16,21 +16,8 @@ export default function ConvoView() {
 						Loading...
 					</Card>
 				) :
-				messages.map((message, index) => (
-					<Card key={index}>
-						<Card.Body>
-							<div>
-								<img src={message.sender.profilePictureURL} className="profilePicture" />
-								<Card.Title>{message.sender.name}</Card.Title>
-							</div>
-							<Card.Text>
-								{message.text}
-							</Card.Text>
-							<Card.Text>
-								{message.date.toLocaleString()}
-							</Card.Text>
-						</Card.Body>
-					</Card>
+				messages.map((message: Message, index) => (
+					<MessageView message={message} index={index}/>
 					)
 				)
 			}

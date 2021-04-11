@@ -17,7 +17,7 @@ export const fakeMessages = [
 	},
 	{
 		'sender': Ryan,
-		'text': 'Hello, what is going on',
+		'text': 'Hello, what is going on. I would really like to see what the long messages tend to look like',
 		'date': new Date(),
 		'likes': null
 	},
