@@ -1,7 +1,7 @@
 import * as React from "react";
 import {act} from 'react-dom/test-utils';
 import * as ReactDOM from "react-dom";
-import App from "../components/ConvoView";
+import App from "../components/Conversation/ConversationView";
 
 // describe('App', function () {
 //    it('should display pass in number', function () {

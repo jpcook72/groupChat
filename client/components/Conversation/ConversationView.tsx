@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import Card from 'react-bootstrap/Card';
-import { fakeMessages } from '../constants/messages';
-import { Message, Conversation } from '../constants/interfaces';
+import { fakeMessages } from '../../constants/messages';
+import { Message, Conversation } from '../../constants/interfaces';
 import MessageView from './MessageView';
 
 export default function ConvoView() {

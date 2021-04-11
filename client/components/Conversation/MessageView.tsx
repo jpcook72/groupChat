@@ -1,6 +1,6 @@
 import React, {useState, useCallback, useEffect} from "react"
 import Card from 'react-bootstrap/Card';
-import { Message } from '../constants/interfaces';
+import { Message } from '../../constants/interfaces';
 import { CaretUp } from 'react-bootstrap-icons';
 
 type Props = {
