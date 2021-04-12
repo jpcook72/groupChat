@@ -1,11 +1,11 @@
 import React from "react"
-import ConvoView from "./Conversation/ConversationView"
+import ConversationView from "./Conversation/ConversationView"
 
 export default function App() {
 
 	return (
 		<div>
-			<ConvoView />
+			<ConversationView />
 		</div>
 	)
 	

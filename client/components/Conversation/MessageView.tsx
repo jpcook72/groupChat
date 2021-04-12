@@ -4,16 +4,15 @@ import { Message } from '../../constants/interfaces';
 import { CaretUp } from 'react-bootstrap-icons';
 
 type Props = {
-    message: Message,
-    index: number
+    message: Message
 }
 
 export default function MessageView(props: Props) {
 
-    const {message, index} = props
+    const {message} = props
 
     return(
-        <Card key={index}>
+        <Card>
             <Card.Body className="fullMessage">
                 <div className="messageHeader">
                     <img src={message.sender.profilePictureURL} className="profilePicture" />
