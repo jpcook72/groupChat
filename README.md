@@ -2,12 +2,6 @@
 
 This is a group chat application built in TypeScript and React.
 
-## testing
-
-Front-end tests are located in [client/__tests__](https://github.com/jpcook72/groupChat/tree/main/client/__tests__)
-
-Back-end tests are not available yet!
-
 ## Installation
 
 node v15.12.0
@@ -29,6 +23,12 @@ npm run start:dev
 ## Deployment
 
 Not deployed yet!
+
+## Testing
+
+Front-end tests are located in [client/__tests__](https://github.com/jpcook72/groupChat/tree/main/client/__tests__)
+
+Back-end tests are not available yet!
 
 ## Technologies Used
 
