@@ -1,9 +1,9 @@
-const John = {
+export const John = {
 	name: 'John',
 	profilePictureURL: 'test-img.jpg'
 }
 
-const Ryan = {
+export const Ryan = {
 	name: 'Ryan',
 	profilePictureURL: 'test-img.jpg'
 }

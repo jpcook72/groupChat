@@ -1,18 +1,23 @@
 import React, {useState, useCallback, useEffect} from "react"
 import Card from 'react-bootstrap/Card';
-import { Message } from '../../constants/interfaces';
-import { CaretUp } from 'react-bootstrap-icons';
+import { Message, Person } from '../../constants/interfaces';
+import { CaretUp, CaretUpFill } from 'react-bootstrap-icons';
 
-type Props = {
-    message: Message
+interface Props {
+    message: Message,
+    currentUser: Person,
+    toggleMessageLike: (message: Message) => void
 }
 
 export default function MessageView(props: Props) {
 
-    const {message} = props
+    const {message, currentUser, toggleMessageLike } = props
+
+    const toggleMessageLikeCallback = () => toggleMessageLike(message)
+    console.log(message.likes)
 
     return(
-        <Card>
+        <Card className="messageCard">
             <Card.Body className="fullMessage">
                 <div className="messageHeader">
                     <img src={message.sender.profilePictureURL} className="profilePicture" />
@@ -22,7 +27,12 @@ export default function MessageView(props: Props) {
                     <Card.Text className="messageText">
                         {message.text}
                     </Card.Text>
-                    <CaretUp />
+                    {
+                        (message.likes.length ?
+                        <CaretUpFill onClick={toggleMessageLikeCallback} /> :
+                        <CaretUp onClick={toggleMessageLikeCallback} />
+                        )
+                    }
                 </div>
                 <Card.Text>
                     {message.date.toLocaleString()}

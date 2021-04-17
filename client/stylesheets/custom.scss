@@ -1,0 +1,18 @@
+$theme-colors: (
+    "primary": green,
+);
+
+.card {
+    color: blue;
+}
+
+// why are these not working
+.bi-caret-up {
+    color: $primary;
+}
+
+.bi-caret-up-fill {
+    color: red;
+}
+
+@import "~bootstrap/scss/bootstrap";

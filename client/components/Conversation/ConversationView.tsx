@@ -1,12 +1,24 @@
 import React, {useState, useEffect} from "react"
 import Card from 'react-bootstrap/Card';
-import { fakeMessages } from '../../constants/messages';
+import { fakeMessages, John } from '../../constants/messages';
 import { Message, Conversation } from '../../constants/interfaces';
 import MessageView from './MessageView';
 
 export default function ConversationView() {
 
 	const [messages, setMessages] = useState<Conversation | null>(null)
+	const [currentUser] = useState(John)
+
+	function toggleMessageLike(message: Message): void {
+		if (messages) {
+			const likeArray = message.likes
+			likeArray.includes(currentUser) ? 
+				likeArray.splice(likeArray.indexOf(currentUser), 1) :
+				likeArray.push(currentUser)
+				
+			setMessages([...messages])
+		}
+	} 
 
 	useEffect(() => {
 		setMessages(fakeMessages);
@@ -21,7 +33,12 @@ export default function ConversationView() {
 					</Card>
 				) :
 				messages.map((message: Message, index) => (
-					<MessageView message={message} key={index}/>
+					<MessageView 
+						key={index} 
+						currentUser={currentUser} 
+						message={message} 
+						toggleMessageLike={toggleMessageLike}
+					/>
 					)
 				)
 			}
