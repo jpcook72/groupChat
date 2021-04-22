@@ -1,56 +1,56 @@
 module.exports = {
-	entry: ["./client/index.tsx"],
+	entry: ['./client/index.tsx'],
 	output: {
 		path: __dirname,
-		filename: "./server/public/bundle.js",
+		filename: './server/public/bundle.js'
 	},
 	resolve: {
-		extensions: [".js", ".jsx", ".tsx", ".ts"],
+		extensions: ['.js', '.jsx', '.tsx', '.ts']
 	},
-	devtool: "source-map",
+	devtool: 'source-map',
 	watchOptions: {
-		ignored: /node_modules/,
+		ignored: /node_modules/
 	},
 	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
+				loader: 'babel-loader',
 				options: {
-					presets: ["@babel/preset-react"],
-				},
+					presets: ['@babel/preset-react']
+				}
 			},
 			{
 				test: /\.tsx?$/,
 				use: 'ts-loader',
-				exclude: /node_modules/,
+				exclude: /node_modules/
 			},
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				use: [
 					{
-						loader: 'style-loader',
+						loader: 'style-loader'
 					},
 					{
 						loader: 'css-loader',
 						options: {
-							sourceMap: true,
-						},
+							sourceMap: true
+						}
 					},
 					{
 						loader: 'sass-loader',
 						options: {
-							sourceMap: true,
-						},
-					},
-				],
+							sourceMap: true
+						}
+					}
+				]
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: 'asset/resource',
-			},
-		],
-	},
+				type: 'asset/resource'
+			}
+		]
+	}
 }
